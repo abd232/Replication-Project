@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 95%;
+  margin: 0 auto;
+}
+.cards-container {
+  margin: 20px 0;
+}
+
+.cards-container div {
+  margin: 6px 0;
+}
+
+.cards-container-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards-container-header div {
+  display: flex;
+  gap: 20px;
+}
+
+.cards-container-header div button {
+  padding: 8px;
+  border-radius: 50%;
+  border: none;
+  text-align: center;
+}
+
+.card {
+  height: 210px;
+  width: 215px;
+}
+
+.card img {
+  height: 200px;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.card * {
+  margin: 1px 0;
+}
+
+.description-p {
+  color: #6a6a6a;
+}

@@ -159,3 +159,78 @@ footer {
     background-color: #f0f0f0;
     padding: 10px;
 }
+
+/* الألوان الافتراضية (Light Mode) */
+:root {
+    --bg-color: #ffffff;
+    --text-main: #222222;
+    --text-secondary: #717171;
+    --border-color: #dddddd;
+    --tab-active: #222222;
+    --footer-bg: #f7f7f7;
+}
+
+/* الألوان عند تفعيل (Dark Mode) */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-main: #f7f7f7;
+    --text-secondary: #b0b0b0;
+    --border-color: #444444;
+    --tab-active: #ffffff;
+    --footer-bg: #121212;
+}
+
+/* تطبيق المتغيرات على كودك */
+.main-container {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    transition: all 0.3s ease; /* تنعيم حركة التبديل */
+}
+
+.title, .column-title, .name {
+    color: var(--text-main);
+}
+
+.desc, .link-item, .bottom-bar {
+    color: var(--text-secondary);
+}
+
+.tabs-list {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.footer-links {
+    background-color: var(--footer-bg);
+}
+
+/* ستايل زر التبديل (يمكنك تخصيصه) */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+    margin-right: 10px;
+}
+.theme-switch input { display:none; }
+.slider {
+    background-color: #ccc;
+    bottom: 0; cursor: pointer;
+    left: 0; position: absolute;
+    right: 0; top: 0;
+    transition: .4s; border-radius: 34px;
+}
+.slider:before {
+    background-color: #fff;
+    bottom: 4px; content: "";
+    height: 26px; left: 4px;
+    position: absolute; width: 26px;
+    transition: .4s; border-radius: 50%;
+    z-index: 2;
+}
+input:checked + .slider { background-color: #222; }
+input:checked + .slider:before { transform: translateX(26px); }

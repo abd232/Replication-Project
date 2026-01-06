@@ -8,7 +8,7 @@ main {
   margin: 0 auto;
 }
 .cards-container {
-  margin: 20px 0;
+  margin: 24px 0;
 }
 
 .cards-container div {
@@ -32,9 +32,51 @@ main {
   text-align: center;
 }
 
+@media screen and (max-width: 750px) {
+  #arrow_buttons_container {
+    display: none;
+  }
+  .cards-container-header div {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+  }
+}
+
+.cards-container-body {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  overflow-x: scroll;
+}
+
+.cards-container-body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 .card {
-  height: 210px;
-  width: 215px;
+  position: relative;
+  min-width: 205px;
+}
+
+.guest-favorite-txt {
+  position: absolute;
+  top: 15px;
+  left: 12px;
+  font-size: 14px;
+  padding-inline: 9.5px;
+  padding-block: 5.5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-clip: border-box;
+  font-weight: 100;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .card img {

@@ -15,10 +15,10 @@ function rightArrowClicked(btn) {
   const viewportWidth = window.innerWidth;
   const cardWidth = document.querySelector(".card").offsetWidth;
   const numberOfCardsShowen = parseInt(viewportWidth / cardWidth);
-  console.log(cardsContainer);
+  console.log(cardWidth);
 
   cardsContainer.scrollBy({
-    left: cardWidth * numberOfCardsShowen + 15,
+    left: cardWidth * numberOfCardsShowen + numberOfCardsShowen * 15,
     behavior: "smooth",
   });
 }

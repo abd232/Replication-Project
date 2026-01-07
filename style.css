@@ -135,6 +135,10 @@ body {
   pointer-events: none;
 }
 
+.site-header.is-collapsed .host-link {
+  display: none;
+}
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -150,6 +154,10 @@ body {
 
 .header-link:hover {
   background: rgba(0, 0, 0, 0.04);
+}
+
+.theme-toggle {
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .icon-button {
@@ -531,4 +539,62 @@ main {
 header,
 footer {
   background-color: #f7f7f7;
+}
+
+/* Dark theme */
+body.dark {
+  background: #111;
+  color: #e6e6e6;
+}
+
+body.dark .site-header,
+body.dark .main-container,
+body.dark header,
+body.dark footer {
+  background: #111;
+}
+
+body.dark .search-bar {
+  background: #1b1b1b;
+  border-color: #333;
+  box-shadow: none;
+}
+
+body.dark .search-divider {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body.dark .tab,
+body.dark .tab-item,
+body.dark .header-link,
+body.dark .search-title,
+body.dark .search-value,
+body.dark .desc,
+body.dark .link-item,
+body.dark .strong,
+body.dark .muted {
+  color: #d9d9d9;
+}
+
+body.dark .description-p,
+body.dark .privacy-choice {
+  color: #bdbdbd;
+}
+
+body.dark .tabs-list,
+body.dark .footer-links {
+  border-bottom-color: #333;
+}
+
+body.dark .icon-button {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+body.dark .header-link:hover,
+body.dark .search-section:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+body.dark .theme-toggle {
+  border-color: #444;
 }

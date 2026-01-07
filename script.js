@@ -14,6 +14,15 @@ window.addEventListener("scroll", syncHeader, { passive: true });
 window.addEventListener("resize", syncHeader);
 syncHeader();
 
+const themeToggle = document.getElementById("themeToggle");
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    themeToggle.textContent = isDark ? "Light" : "Dark";
+  });
+}
+
 function leftArrowClicked(btn) {
   const cardsContainer =
     btn.parentElement.parentElement.parentElement.querySelector(

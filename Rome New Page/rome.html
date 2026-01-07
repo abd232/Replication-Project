@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="picturesss/head.JPG">
+    <title>Nature and Out doors</title>
+    <link rel="stylesheet" href="rome.css">
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<div class="container">
+
+    <div class="logo">
+        <img src="picturesss/Logo.JPG" alt="logo-pic">
+        <h3>Become a host</h3>
+    </div>
+
+    <div class="image-section">
+        <img class="back-img" src="picturesss/rome.avif" alt="rome-pic">
+    </div>
+    <div class="card-section">
+        <h1 class="main-title">Monthly Rentals in Rome </h1>
+        <p class="desc"> Discover long-term rentals that feel like home for stays of a month or longer.</p>
+
+        <div class="border-group">
+            <div class="item full" id="box1" onclick="focusBox(this)">
+                <label for="Location">Location</label>
+                <input type="text" id="Location" placeholder="Rome, Italy" name="Rome, Italy">
+            </div>
+
+            <div class="row">
+                <div class="item half" id="box2" onclick="focusBox(this)">
+                    <label for="checkin">Check in</label>
+                    <input id="checkin" type="date">
+                </div>
+                <div class="item half no-right" id="box3" onclick="focusBox(this)">
+                    <label for="checkout">Check out</label>
+                    <input id="checkout" type="date">
+                </div>
+            </div>
+        </div>
+        <button class="pink-btn"> Search</button>
+    </div>
+</div>
+
+<script src="rome.js"></script>
+</body>
+
+</html>

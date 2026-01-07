@@ -1,26 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Air Bnb</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <header>
-      <div>
-        <h1>Air Bnb</h1>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-        <img src="#" alt="#">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahmad Section</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="site-header" id="siteHeader">
+
+    <div class="header-top">
+
+      <button class="header-logo btn-reset" type="button">
+        <img src="Images/Airbnb_Logo.svg" alt="Airbnb Logo" />
+      </button>
+
+      <nav class="header-tabs">
+        <button class="tab is-active" type="button">
+          <img class="tab-icon" src="Images/House-icon.png" alt="Homes" />
+          <span class="tab-text">Homes</span>
+          <span class="tab-underline"></span>
+        </button>
+
+        <button class="tab" type="button">
+          <img class="tab-icon" src="Images/Airbaloon-icon.png" alt="Date" />
+          <span class="tab-text">Experiences</span>
+          <span class="tab-badge">NEW</span>
+        </button>
+
+        <button class="tab" type="button">
+          <img class="tab-icon" src="Images/Ringbell-icon.png" alt="Guests" />
+          <span class="tab-text">Services</span>
+          <span class="tab-badge">NEW</span>
+        </button>
+      </nav>
+
+      <div class="header-actions">
+        <button class="header-link btn-reset" type="button">
+          Become a host
+        </button>
+
+        <button class="icon-button" type="button">
+          <img src="Images/global-icon.png" alt="Languages" />
+        </button>
+
+        <button class="icon-button" type="button">
+          <img src="Images/menu-icon.png" alt="Menu" />
+        </button>
       </div>
-    </header>
-    <main></main>
-    <footer></footer>
-  </body>
+
+    </div>
+
+    <div class="header-searchWrap">
+      <div class="search-bar">
+
+        <button class="search-section btn-reset" type="button">
+          <div class="search-title">Where</div>
+          <div class="search-value value-expanded">Search destinations</div>
+          <div class="search-value value-collapsed strong">Anywhere</div>
+        </button>
+
+        <span class="search-divider"></span>
+
+        <button class="search-section btn-reset" type="button">
+          <div class="search-title">When</div>
+          <div class="search-value value-expanded">Add dates</div>
+          <div class="search-value value-collapsed strong">Anytime</div>
+        </button>
+
+        <span class="search-divider"></span>
+
+        <button class="search-section btn-reset" type="button">
+          <div class="search-title">Who</div>
+          <div class="search-value value-expanded">Add guests</div>
+          <div class="search-value value-collapsed muted">Add guests</div>
+        </button>
+
+        <button class="search-button" type="button">
+          <img src="Images/find.png" alt="Search" />
+        </button>
+
+      </div>
+    </div>
+
+  </header>
+
+  <div class="header-spacer" id="headerSpacer"></div>
+
+  <main class="page-content">
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora mollitia, tenetur suscipit minima, accusantium
+      molestias, at alias reiciendis quas minus porro in libero praesentium ratione ipsum odit iure repellendus eveniet!
+    </h1>
+    <div class="filler"></div>
+  </main>
+
   <script src="script.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #222;
+  background: #fff;
+}
+
+.btn-reset {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-align: inherit;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 152px;
+
+  background: #fbfbfbfb;
+
+  border-bottom: 1px solid transparent;
+}
+
+.site-header.is-collapsed {
+  height: 80px;
+  border-bottom-color: rgba(0, 0, 0, .10);
+}
+
+.header-spacer {
+  height: 152px;
+  transition: height 260ms ease;
+
+}
+
+.header-spacer.is-collapsed {
+  height: 80px;
+  transition: 260ms ease;
+}
+
+.header-top {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+  padding: 0 24px;
+  max-width: 1120px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  height: 32px;
+  display: block;
+}
+
+.header-tabs {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  transition: opacity 140ms linear, transform 260ms ease;
+}
+
+.tab {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #717171;
+  font-weight: 700;
+  position: relative;
+}
+
+.tab-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.tab-text {
+  font-size: 16px;
+}
+
+.tab.is-active {
+  color: #111;
+}
+
+.tab.is-active .tab-icon {
+  opacity: 1;
+}
+
+.tab-underline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: #111;
+}
+
+.tab.is-active .tab-underline {
+  opacity: 0.5;
+}
+
+.tab-badge {
+  position: absolute;
+  top: -6px;
+  right: -18px;
+  background: #333;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 30px;
+}
+
+.site-header.is-collapsed .header-tabs {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-link {
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 30px;
+}
+
+.header-link:hover {
+  background: rgba(0, 0, 0, .04);
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, .04);
+  cursor: pointer;
+}
+
+.icon-button img {
+  width: 18px;
+  height: 18px;
+  opacity: .9;
+}
+
+.icon-button:hover {
+  background: rgba(0, 0, 0, 0.09);
+}
+
+.header-searchWrap {
+  position: absolute;
+  top: 88px;
+  left: 0;
+  right: 0;
+
+  width: 860px;
+  max-width: calc(100vw - 140px);
+  margin: 0 auto;
+
+  transition: top 260ms ease, width 260ms ease, max-width 260ms ease;
+}
+
+
+.site-header.is-collapsed .header-searchWrap {
+  top: 18px;
+
+  width: 540px;
+  max-width: calc(100vw - 220px);
+}
+
+.search-bar {
+  height: 64px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .10);
+  padding: 0 8px;
+
+  display: flex;
+  align-items: center;
+}
+
+.site-header.is-collapsed .search-bar {
+  height: 44px;
+  padding: 0 6px;
+}
+
+.search-section {
+  flex: content;
+  min-width: 0;
+  padding: 12px 16px;
+  border-radius: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-section:hover {
+  background: rgba(0, 0, 0, .04);
+}
+
+.search-title {
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.search-value {
+  margin-top: 2px;
+  font-size: 14px;
+  color: #717171;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-divider {
+  width: 2px;
+  height: 32px;
+  background: rgba(0, 0, 0, .14);
+}
+
+.search-button {
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 999px;
+  background: #ff385c;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.search-button img {
+  width: 18px;
+  height: 18px;
+  filter: invert(1);
+}
+
+.site-header.is-collapsed .search-button {
+  width: 36px;
+  height: 36px;
+}
+
+.value-collapsed {
+  display: none;
+}
+
+.site-header.is-collapsed .search-title,
+.site-header.is-collapsed .value-expanded {
+  display: none;
+}
+
+.site-header.is-collapsed .value-collapsed {
+  display: block;
+  margin: 0;
+}
+
+.strong {
+  color: #222;
+  font-weight: 800;
+}
+
+.muted {
+  color: #717171;
+  font-weight: 700;
+}
+
+.page-content {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 20px 24px 80px;
+}
+
+.filler {
+  height: 1400px;
+}

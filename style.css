@@ -28,6 +28,7 @@ body {
   height: 152px;
   background: #fbfbfbfb;
   border-bottom: 1px solid transparent;
+  z-index: 1000;
 }
 
 .site-header.is-collapsed {

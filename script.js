@@ -15,12 +15,18 @@ window.addEventListener("resize", syncHeader);
 syncHeader();
 
 function leftArrowClicked(btn) {
-  const cardsContainer = btn.parentElement.querySelector(
-    ".cards-container-body"
-  );
+  const cardsContainer =
+    btn.parentElement.parentElement.parentElement.querySelector(
+      ".cards-container-body"
+    );
   const viewportWidth = window.innerWidth;
   const cardWidth = document.querySelector(".card").offsetWidth;
   const numberOfCardsShowen = parseInt(viewportWidth / cardWidth);
+
+  cardsContainer.scrollBy({
+    left: -(cardWidth * numberOfCardsShowen + numberOfCardsShowen * 15),
+    behavior: "smooth",
+  });
 }
 
 function rightArrowClicked(btn) {

@@ -294,6 +294,7 @@ main {
   width: 95%;
   margin: 0 auto;
 }
+
 .cards-container {
   margin: 24px 0;
 }
@@ -323,6 +324,7 @@ main {
   #arrow_buttons_container {
     display: none;
   }
+
   .cards-container-header div {
     display: flex;
     flex: 1;
@@ -343,8 +345,10 @@ main {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .cards-container-body {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .card {

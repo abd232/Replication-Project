@@ -11,6 +11,10 @@ body {
   background: #fff;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .btn-reset {
   border: 0;
   background: transparent;
@@ -298,6 +302,171 @@ body {
 
 .hidden {
   display: none;
+}
+
+.host-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  z-index: 2000;
+}
+
+.host-modal.hidden {
+  display: none;
+}
+
+.host-modal-card {
+  width: min(560px, 92vw);
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 14px;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.host-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 18px 24px;
+  border-bottom: 1px solid #ececec;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.host-modal-header h2 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.host-modal-close {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.host-modal-close:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.host-modal-body {
+  padding: 28px 32px 32px;
+}
+
+.host-modal-body h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.host-input-box {
+  border: 1px solid #cfcfcf;
+  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+}
+
+.host-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #444;
+  padding: 10px 14px 0;
+}
+
+.host-input {
+  border: 0;
+  padding: 8px 14px 12px;
+  font-size: 15px;
+  background: #fff;
+  outline: none;
+}
+
+.host-input-divider {
+  height: 1px;
+  background: #d8d8d8;
+  display: block;
+}
+
+.host-help {
+  font-size: 12px;
+  color: #444;
+  margin: 10px 0 18px;
+  line-height: 1.4;
+}
+
+.host-link-inline {
+  color: #222;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.host-cta {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #e61e4d, #d70466);
+  cursor: pointer;
+}
+
+.host-cta:hover {
+  background: linear-gradient(90deg, #d91a48, #c1035c);
+}
+
+.host-divider {
+  margin: 18px 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  color: #666;
+  font-size: 12px;
+}
+
+.host-divider span {
+  height: 1px;
+  background: #e0e0e0;
+  display: block;
+}
+
+.host-alt {
+  width: 100%;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.host-alt-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #222;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .dettail-page {
@@ -804,4 +973,45 @@ body.dark .search-section:hover {
 
 body.dark .theme-toggle {
   border-color: #444;
+}
+
+body.dark .host-modal-card {
+  background: #151515;
+  border-color: #333;
+}
+
+body.dark .host-modal-header {
+  border-bottom-color: #2b2b2b;
+}
+
+body.dark .host-input-box {
+  border-color: #3a3a3a;
+}
+
+body.dark .host-input {
+  background: #151515;
+  color: #e6e6e6;
+}
+
+body.dark .host-input-divider {
+  background: #2f2f2f;
+}
+
+body.dark .host-label,
+body.dark .host-help {
+  color: #bdbdbd;
+}
+
+body.dark .host-link-inline {
+  color: #e6e6e6;
+}
+
+body.dark .host-alt {
+  border-color: #e6e6e6;
+  background: #111;
+  color: #e6e6e6;
+}
+
+body.dark .host-alt-icon {
+  border-color: #e6e6e6;
 }

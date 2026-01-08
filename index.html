@@ -46,7 +46,7 @@
         </nav>
 
         <div class="header-actions">
-          <button class="header-link btn-reset" type="button">
+          <button class="header-link host-link btn-reset" id="hostButton" type="button">
             Become a host
           </button>
 
@@ -92,6 +92,54 @@
     </header>
 
     <div class="header-spacer" id="headerSpacer"></div>
+    <div class="host-modal hidden" id="hostModal" aria-hidden="true">
+      <div class="host-modal-card" role="dialog" aria-modal="true" aria-labelledby="hostModalTitle">
+        <div class="host-modal-header">
+          <h2 id="hostModalTitle">Log in or sign up</h2>
+          <button class="host-modal-close btn-reset" id="hostModalClose" type="button" aria-label="Close">
+            &times;
+          </button>
+        </div>
+        <div class="host-modal-body">
+          <h3>Welcome to Airbnb</h3>
+          <div class="host-input-box">
+            <label class="host-label" for="hostCountry">Country code</label>
+            <select class="host-input" id="hostCountry" name="country">
+              <option>Palestinian Territories (+970)</option>
+              <option>Jordan (+962)</option>
+              <option>Saudi Arabia (+966)</option>
+              <option>United Arab Emirates (+971)</option>
+            </select>
+            <span class="host-input-divider"></span>
+            <input
+              class="host-input"
+              id="hostPhone"
+              name="phone"
+              type="tel"
+              placeholder="Phone number"
+            />
+          </div>
+          <p class="host-help">
+            We'll call or text you to confirm your number. Standard message and data rates apply.
+            <a href="#" class="host-link-inline">Privacy Policy</a>
+          </p>
+          <button class="host-cta" type="button">Continue</button>
+          <div class="host-divider">
+            <span></span>
+            <p>or</p>
+            <span></span>
+          </div>
+          <button class="host-alt" type="button">
+            <span class="host-alt-icon">G</span>
+            Continue with Google
+          </button>
+          <button class="host-alt" type="button">
+            <span class="host-alt-icon">A</span>
+            Continue with Apple
+          </button>
+        </div>
+      </div>
+    </div>
     <main class="page-content">
       <div class="dettail-page hidden">
         <div class="dettail-page-container">

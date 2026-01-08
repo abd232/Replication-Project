@@ -41,6 +41,46 @@ if (themeToggle) {
   });
 }
 
+const hostButton = document.getElementById("hostButton");
+const hostModal = document.getElementById("hostModal");
+const hostModalClose = document.getElementById("hostModalClose");
+
+function openHostModal() {
+  if (!hostModal) return;
+  hostModal.classList.remove("hidden");
+  hostModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+}
+
+function closeHostModal() {
+  if (!hostModal) return;
+  hostModal.classList.add("hidden");
+  hostModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
+
+if (hostButton && hostModal) {
+  hostButton.addEventListener("click", openHostModal);
+}
+
+if (hostModalClose) {
+  hostModalClose.addEventListener("click", closeHostModal);
+}
+
+if (hostModal) {
+  hostModal.addEventListener("click", (event) => {
+    if (event.target === hostModal) {
+      closeHostModal();
+    }
+  });
+}
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && hostModal && !hostModal.classList.contains("hidden")) {
+    closeHostModal();
+  }
+});
+
 function isAtEnd(cardsContainer) {
   return (
     cardsContainer.scrollLeft + cardsContainer.clientWidth + 100 >=

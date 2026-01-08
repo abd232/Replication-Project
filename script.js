@@ -1,8 +1,29 @@
 const header = document.getElementById("siteHeader");
 const spacer = document.getElementById("headerSpacer");
 
-function syncHeader() {
+const disableButton = true;
 
+function showDetailsPage() {
+  const detailDiv = document.querySelector(".dettail-page");
+  const allCardsContainer = document.querySelectorAll(".cards-container");
+  allCardsContainer.forEach((cardsContainer) => {
+    cardsContainer.classList.add("hidden");
+  });
+
+  detailDiv.classList.remove("hidden");
+}
+
+function showMainPage() {
+  const detailDiv = document.querySelector(".dettail-page");
+  const allCardsContainer = document.querySelectorAll(".cards-container");
+  allCardsContainer.forEach((cardsContainer) => {
+    cardsContainer.classList.remove("hidden");
+  });
+
+  detailDiv.classList.add("hidden");
+}
+
+function syncHeader() {
   const isCollapsed = window.scrollY > 0;
   header.classList.toggle("is-collapsed", isCollapsed);
   spacer.classList.toggle("is-collapsed", isCollapsed);
@@ -20,6 +41,17 @@ if (themeToggle) {
   });
 }
 
+function isAtEnd(cardsContainer) {
+  return (
+    cardsContainer.scrollLeft + cardsContainer.clientWidth + 100 >=
+    cardsContainer.scrollWidth
+  );
+}
+
+function isAtStart(cardsContainer) {
+  return cardsContainer.scrollLeft <= 100;
+}
+
 function leftArrowClicked(btn) {
   const cardsContainer =
     btn.parentElement.parentElement.parentElement.querySelector(
@@ -28,11 +60,14 @@ function leftArrowClicked(btn) {
   const viewportWidth = window.innerWidth;
   const cardWidth = document.querySelector(".card").offsetWidth;
   const numberOfCardsShowen = parseInt(viewportWidth / cardWidth);
+  const rightArrowBtn = btn.parentElement.querySelectorAll("button")[1];
 
   cardsContainer.scrollBy({
     left: -(cardWidth * numberOfCardsShowen + numberOfCardsShowen * 15),
     behavior: "smooth",
   });
+  rightArrowBtn.disabled = false;
+  btn.disabled = isAtStart(cardsContainer);
 }
 
 function rightArrowClicked(btn) {
@@ -43,24 +78,31 @@ function rightArrowClicked(btn) {
   const viewportWidth = window.innerWidth;
   const cardWidth = document.querySelector(".card").offsetWidth;
   const numberOfCardsShowen = parseInt(viewportWidth / cardWidth);
-  console.log(cardWidth);
+  const rightArrowBtn = btn.parentElement.querySelectorAll("button")[0];
 
   cardsContainer.scrollBy({
     left: cardWidth * numberOfCardsShowen + numberOfCardsShowen * 15,
     behavior: "smooth",
   });
+  rightArrowBtn.disabled = false;
+  btn.disabled = isAtEnd(cardsContainer);
 }
 
 // Footer tabs + privacy underline
 function changeTab(tabId, contentId) {
-  document.querySelectorAll(".tab-item").forEach((t) => t.classList.remove("active-tab"));
-  document.querySelectorAll(".tab-content").forEach((c) => (c.style.display = "none"));
+  document
+    .querySelectorAll(".tab-item")
+    .forEach((t) => t.classList.remove("active-tab"));
+  document
+    .querySelectorAll(".tab-content")
+    .forEach((c) => (c.style.display = "none"));
   document.getElementById(tabId).classList.add("active-tab");
   document.getElementById(contentId).style.display = "grid";
 }
 
 function showLine() {
-  document.getElementById("privacy-text").style.textDecoration = "underline 2px";
+  document.getElementById("privacy-text").style.textDecoration =
+    "underline 2px";
 }
 
 function hideLine() {
